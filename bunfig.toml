@@ -1,0 +1,8 @@
+[test]
+root = "tests"
+preload = ["./tests/setup/happy-dom.ts"]
+coverage = true
+coverageThreshold = { lines = 0.95, functions = 0.95 }
+coverageSkipTestFiles = true
+coverageReporter = ["text", "lcov"]
+coverageDir = "coverage"

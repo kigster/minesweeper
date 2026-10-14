@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main id="game">
+      <header id="header">
+        <div id="mine-counter" class="led" role="status" aria-label="Mines remaining">010</div>
+        <button id="reset" type="button" data-face="smile" aria-label="New game"></button>
+        <div id="timer" class="led" role="status" aria-label="Seconds elapsed">000</div>
+        <select id="difficulty" aria-label="Difficulty">
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="expert">Expert</option>
+        </select>
+      </header>
+      <div id="board"></div>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

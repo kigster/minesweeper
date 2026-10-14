@@ -1,0 +1,153 @@
+:root {
+  --cell: 24px;
+  --cols: 9;
+  --rows: 9;
+  --face: 40px;
+  --bevel-light: #fff;
+  --bevel-dark: #7b7b7b;
+  --face-bg: #c0c0c0;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--face-bg);
+  font-family: Tahoma, Verdana, sans-serif;
+}
+
+#game {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px;
+  margin-bottom: 8px;
+  background: var(--face-bg);
+  border: 3px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  min-width: 260px;
+}
+
+.led {
+  background: #000;
+  color: #f00;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 1;
+  padding: 2px 4px;
+  letter-spacing: 2px;
+  border: 2px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+}
+
+#reset {
+  width: var(--face);
+  height: var(--face);
+  font-size: 24px;
+  line-height: 1;
+  padding: 0;
+  background: var(--face-bg);
+  border: 3px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  cursor: pointer;
+}
+
+#reset:active {
+  border-color: var(--bevel-dark);
+}
+
+#reset::before {
+  content: "🙂";
+}
+#reset[data-face="smile"]::before {
+  content: "🙂";
+}
+#reset[data-face="ohh"]::before {
+  content: "😮";
+}
+#reset[data-face="dead"]::before {
+  content: "😵";
+}
+#reset[data-face="cool"]::before {
+  content: "😎";
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), var(--cell));
+  grid-auto-rows: var(--cell);
+  border: 3px solid;
+  border-color: var(--bevel-dark) var(--bevel-light) var(--bevel-light) var(--bevel-dark);
+  user-select: none;
+}
+
+.cell {
+  box-sizing: border-box;
+  width: var(--cell);
+  height: var(--cell);
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  font-size: calc(var(--cell) * 0.65);
+  line-height: 1;
+  background: var(--face-bg);
+  border: 3px solid;
+  border-color: var(--bevel-light) var(--bevel-dark) var(--bevel-dark) var(--bevel-light);
+  cursor: default;
+}
+
+.cell.revealed {
+  border: 1px solid var(--bevel-dark);
+}
+
+.cell.flagged::before {
+  content: "🚩";
+}
+.cell.mine::before {
+  content: "💣";
+}
+.cell.exploded {
+  background: #f00;
+}
+.cell.wrong-flag::before {
+  content: "❌";
+}
+
+.n1 {
+  color: #0000ff;
+}
+.n2 {
+  color: #008000;
+}
+.n3 {
+  color: #ff0000;
+}
+.n4 {
+  color: #000080;
+}
+.n5 {
+  color: #800000;
+}
+.n6 {
+  color: #008080;
+}
+.n7 {
+  color: #000000;
+}
+.n8 {
+  color: #808080;
+}

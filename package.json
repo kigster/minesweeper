@@ -1,0 +1,25 @@
+{
+  "name": "minesweeper",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Full-viewport, framework-free Minesweeper in TypeScript, served by Bun",
+  "type": "module",
+  "scripts": {
+    "dev": "bun ./index.html",
+    "start": "bun server.ts",
+    "build": "bun build ./index.html --outdir dist --minify",
+    "test": "bun test --coverage",
+    "lint": "biome check . && tsc --noEmit",
+    "cypress:run": "cypress run",
+    "e2e": "start-server-and-test start http://localhost:3000 cypress:run"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@happy-dom/global-registrator": "21.0.1",
+    "bun-types": "1.4.3",
+    "cypress": "16.1.1",
+    "happy-dom": "21.0.1",
+    "start-server-and-test": "3.0.13",
+    "typescript": "7.0.2"
+  }
+}
