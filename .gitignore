@@ -7,3 +7,7 @@ cypress/screenshots/
 cypress/downloads/
 .env
 .DS_Store
+.plans/agentilda-state.json
+.plans/agentilda-state.json.*.tmp
+.plans/openlanes-state.json
+.plans/openlanes-state.json.*.tmp

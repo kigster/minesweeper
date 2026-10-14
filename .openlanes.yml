@@ -1,0 +1,4 @@
+project: minesweeper
+lane: plan
+frontend: true
+jobs: 4
